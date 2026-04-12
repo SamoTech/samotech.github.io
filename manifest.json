@@ -1,0 +1,24 @@
+{
+  "name": "Ossama Hashim — Developer & Builder",
+  "short_name": "SamoTech",
+  "description": "Full-stack developer & builder. AI agents, network tools, encrypted apps, DevOps. Based in Cairo, Egypt.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0e0e0c",
+  "theme_color": "#4f98a3",
+  "lang": "en",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "https://avatars.githubusercontent.com/SamoTech",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://avatars.githubusercontent.com/SamoTech",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["productivity", "developer tools", "portfolio"]
+}
