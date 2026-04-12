@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- theme applied before paint to prevent FOUC -->
+  <script>
+    (function(){
+      var d=document.documentElement;
+      var t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+      d.setAttribute('data-theme',t);
+    })();
+  </script>
+
   <!-- ═══ Primary SEO ═══ -->
   <title>Ossama Hashim — Developer & Builder</title>
-  <meta name="description" content="Ossama Hashim — Full-stack developer & builder. AI agents, network tools, encrypted apps, DevOps automation. Based in Cairo, Egypt." />
-  <meta name="keywords" content="Ossama Hashim, SamoTech, full-stack developer, AI agents, Next.js, Python, MikroTik, DevOps, Cairo Egypt, open source" />
+  <meta name="description" content="Ossama Hashim — Full-stack developer & builder. AI agents, network tools, encrypted apps, DevOps automation. Based in Giza, Egypt." />
+  <meta name="keywords" content="Ossama Hashim, SamoTech, full-stack developer, AI agents, Next.js, Python, MikroTik, DevOps, Giza Egypt, open source" />
   <meta name="author" content="Ossama Hashim" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="https://samotech.github.io/" />
 
-  <!-- ═══ GEO / Local ═══ -->
+  <!-- ═══ GEO ═══ -->
   <meta name="geo.region" content="EG-GZ" />
   <meta name="geo.placename" content="Giza, Egypt" />
   <meta name="geo.position" content="30.0131;31.2089" />
@@ -22,8 +31,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://samotech.github.io/" />
   <meta property="og:title" content="Ossama Hashim — Developer & Builder" />
-  <meta property="og:description" content="Full-stack developer & builder obsessed with turning ideas into working things. AI agents, network tools, encrypted apps, DevOps. Cairo, Egypt." />
-  <meta property="og:image" content="https://opengraph.githubassets.com/1/SamoTech/SamoTech" />
+  <meta property="og:description" content="Full-stack developer & builder obsessed with turning ideas into working things. AI agents, network tools, encrypted apps, DevOps. Giza, Egypt." />
+  <meta property="og:image" content="https://opengraph.githubassets.com/1/SamoTech/samotech.github.io" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Ossama Hashim — Developer & Builder portfolio" />
@@ -33,18 +42,16 @@
   <!-- ═══ Twitter / X Card ═══ -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ossama Hashim — Developer & Builder" />
-  <meta name="twitter:description" content="Full-stack developer & builder. AI agents, network tools, encrypted apps, DevOps. Based in Cairo, Egypt." />
-  <meta name="twitter:image" content="https://opengraph.githubassets.com/1/SamoTech/SamoTech" />
+  <meta name="twitter:description" content="Full-stack developer & builder. AI agents, network tools, encrypted apps, DevOps. Based in Giza, Egypt." />
+  <meta name="twitter:image" content="https://opengraph.githubassets.com/1/SamoTech/samotech.github.io" />
   <meta name="twitter:image:alt" content="Ossama Hashim portfolio" />
-  <meta name="twitter:creator" content="@SamoTechDev" />
-  <meta name="twitter:site" content="@SamoTechDev" />
 
   <!-- ═══ Favicons ═══ -->
   <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/SamoTech" />
   <link rel="shortcut icon" href="https://avatars.githubusercontent.com/SamoTech" />
   <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/SamoTech" />
 
-  <!-- ═══ PWA / App ═══ -->
+  <!-- ═══ PWA ═══ -->
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#4f98a3" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#01696f" media="(prefers-color-scheme: light)" />
@@ -56,7 +63,7 @@
   <!-- ═══ Google Verification ═══ -->
   <meta name="google-site-verification" content="jCTwUk8Viq0xTc8ao37uAUzf0Dg1hNdqrMhPPUyS97k" />
 
-  <!-- ═══ JSON-LD Structured Data ═══ -->
+  <!-- ═══ JSON-LD ═══ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -68,7 +75,7 @@
         "alternateName": "SamoTech",
         "url": "https://samotech.github.io/",
         "image": "https://avatars.githubusercontent.com/SamoTech",
-        "description": "Full-stack developer and builder based in Cairo, Egypt. Specialises in AI agents, network tools, encrypted apps, and DevOps automation.",
+        "description": "Full-stack developer and builder based in Giza, Egypt. Specialises in AI agents, network tools, encrypted apps, and DevOps automation.",
         "jobTitle": "Full-Stack Developer & DevOps Engineer",
         "worksFor": { "@type": "Organization", "name": "Self-employed" },
         "address": {
@@ -78,27 +85,16 @@
           "addressCountry": "EG"
         },
         "email": "samo.hossam@gmail.com",
-        "sameAs": [
-          "https://github.com/SamoTech"
-        ],
-        "knowsAbout": [
-          "TypeScript", "Python", "Next.js", "React", "Node.js",
-          "FastAPI", "Supabase", "Docker", "Vercel", "LangGraph",
-          "MikroTik RouterOS", "BGP", "AI Agents", "GitHub Actions"
-        ]
+        "sameAs": ["https://github.com/SamoTech"],
+        "knowsAbout": ["TypeScript","Python","Next.js","React","Node.js","FastAPI","Supabase","Docker","Vercel","LangGraph","MikroTik RouterOS","BGP","AI Agents","GitHub Actions"]
       },
       {
         "@type": "WebSite",
         "@id": "https://samotech.github.io/#website",
         "url": "https://samotech.github.io/",
         "name": "Ossama Hashim — Developer & Builder",
-        "description": "Portfolio of Ossama Hashim, full-stack developer and builder based in Cairo, Egypt.",
         "inLanguage": "en",
-        "author": { "@id": "https://samotech.github.io/#person" },
-        "potentialAction": {
-          "@type": "ReadAction",
-          "target": "https://samotech.github.io/"
-        }
+        "author": { "@id": "https://samotech.github.io/#person" }
       },
       {
         "@type": "ProfilePage",
@@ -107,15 +103,6 @@
         "name": "Ossama Hashim Portfolio",
         "about": { "@id": "https://samotech.github.io/#person" },
         "mainEntity": { "@id": "https://samotech.github.io/#person" }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://samotech.github.io/" },
-          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://samotech.github.io/#about" },
-          { "@type": "ListItem", "position": 3, "name": "Projects", "item": "https://samotech.github.io/#projects" },
-          { "@type": "ListItem", "position": 4, "name": "Contact", "item": "https://samotech.github.io/#contact" }
-        ]
       }
     ]
   }
@@ -126,47 +113,87 @@
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800,900&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
 
   <style>
+    /* ── tokens ── */
     :root {
-      --text-xs:clamp(0.75rem,0.7rem + 0.25vw,0.875rem);--text-sm:clamp(0.875rem,0.8rem + 0.35vw,1rem);--text-base:clamp(1rem,0.95rem + 0.25vw,1.125rem);--text-lg:clamp(1.125rem,1rem + 0.75vw,1.5rem);--text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);--text-3xl:clamp(2.5rem,1rem + 4vw,5rem);--text-hero:clamp(3rem,0.5rem + 7vw,8rem);
-      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;--space-32:8rem;
+      --text-xs:clamp(0.75rem,0.7rem + 0.25vw,0.875rem);
+      --text-sm:clamp(0.875rem,0.8rem + 0.35vw,1rem);
+      --text-base:clamp(1rem,0.95rem + 0.25vw,1.125rem);
+      --text-lg:clamp(1.125rem,1rem + 0.75vw,1.5rem);
+      --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
+      --text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
+      --text-3xl:clamp(2.5rem,1rem + 4vw,5rem);
+      --text-hero:clamp(3rem,0.5rem + 7vw,8rem);
+      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;
+      --space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;
+      --space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;--space-32:8rem;
       --radius-sm:.375rem;--radius-md:.5rem;--radius-lg:.75rem;--radius-xl:1rem;--radius-full:9999px;
-      --transition:180ms cubic-bezier(0.16,1,0.3,1);
+      --ease:cubic-bezier(0.16,1,0.3,1);
+      --transition:180ms var(--ease);
       --content-narrow:640px;--content-default:960px;--content-wide:1200px;
       --font-display:'Cabinet Grotesk','Helvetica Neue',sans-serif;
       --font-body:'Satoshi','Inter',sans-serif;
     }
-    :root,[data-theme="dark"]{
+
+    /* ── dark palette (default) ── */
+    :root,[data-theme="dark"] {
       --bg:#0e0e0c;--surface:#141412;--surface-2:#1a1917;--surface-off:#1f1e1c;--surface-dyn:#2a2927;
       --div:#252422;--brd:#2e2d2b;
       --txt:#e8e6e3;--muted:#7a7977;--faint:#4a4947;--inv:#0e0e0c;
       --pri:#4f98a3;--pri-h:#3a7d88;--pri-hl:#1a3338;
-      --sh-sm:0 1px 2px oklch(0 0 0/.3);--sh-md:0 4px 16px oklch(0 0 0/.4);--sh-lg:0 16px 48px oklch(0 0 0/.5);
+      /* solid fallbacks for oklch relative color — used in borders/glows */
+      --brd-soft:rgba(232,230,227,0.07);
+      --brd-med:rgba(232,230,227,0.15);
+      --brd-strong:rgba(232,230,227,0.35);
+      --brd-pri-soft:rgba(79,152,163,0.3);
+      --pri-glow:rgba(79,152,163,0.05);
+      --sel-bg:rgba(79,152,163,0.25);
+      --nav-bg:rgba(14,14,12,0.88);
+      --hero-glow:rgba(79,152,163,0.06);
+      --sh-sm:0 1px 2px rgba(0,0,0,.3);--sh-md:0 4px 16px rgba(0,0,0,.4);--sh-lg:0 16px 48px rgba(0,0,0,.5);
     }
-    [data-theme="light"]{
+
+    /* ── light palette ── */
+    [data-theme="light"] {
       --bg:#f7f6f2;--surface:#f9f8f5;--surface-2:#fbfbf9;--surface-off:#f0ede9;--surface-dyn:#e6e4df;
       --div:#dcd9d5;--brd:#d4d1ca;
       --txt:#1a1917;--muted:#6b6966;--faint:#b0ada8;--inv:#f9f8f5;
       --pri:#01696f;--pri-h:#0c4e54;--pri-hl:#ccdcda;
-      --sh-sm:0 1px 2px oklch(0.2 0.01 80/.06);--sh-md:0 4px 12px oklch(0.2 0.01 80/.08);--sh-lg:0 12px 32px oklch(0.2 0.01 80/.12);
+      --brd-soft:rgba(26,25,23,0.07);
+      --brd-med:rgba(26,25,23,0.15);
+      --brd-strong:rgba(26,25,23,0.35);
+      --brd-pri-soft:rgba(1,105,111,0.3);
+      --pri-glow:rgba(1,105,111,0.05);
+      --sel-bg:rgba(1,105,111,0.2);
+      --nav-bg:rgba(247,246,242,0.88);
+      --hero-glow:rgba(1,105,111,0.05);
+      --sh-sm:0 1px 2px rgba(50,45,30,.06);--sh-md:0 4px 12px rgba(50,45,30,.08);--sh-lg:0 12px 32px rgba(50,45,30,.12);
     }
+
+    /* ── base reset ── */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;scroll-behavior:smooth;scroll-padding-top:4rem;}
-    body{min-height:100dvh;line-height:1.65;font-family:var(--font-body);font-size:var(--text-base);color:var(--txt);background:var(--bg);transition:background .3s,color .3s;}
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;scroll-behavior:smooth;scroll-padding-top:4.5rem;}
+    /* NO body transition on load — prevents FOUC flash */
+    body{min-height:100dvh;line-height:1.65;font-family:var(--font-body);font-size:var(--text-base);color:var(--txt);background:var(--bg);}
+    body.theme-ready{transition:background .3s,color .3s;}
     img,picture,video,canvas,svg{display:block;max-width:100%;height:auto;}
     h1,h2,h3,h4,h5,h6{text-wrap:balance;line-height:1.15;font-family:var(--font-display);}
     p,li{text-wrap:pretty;}
-    ::selection{background:oklch(from var(--pri) l c h/.25);color:var(--txt);}
+    ::selection{background:var(--sel-bg);color:var(--txt);}
     :focus-visible{outline:2px solid var(--pri);outline-offset:3px;border-radius:var(--radius-sm);}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
     button{cursor:pointer;background:none;border:none;font:inherit;color:inherit;}
     a{color:inherit;text-decoration:none;}
 
+    /* ── skip link ── */
     .skip{position:absolute;top:-100%;left:1rem;background:var(--pri);color:var(--inv);padding:.5rem 1rem;border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600;z-index:9999;transition:top .2s;}
     .skip:focus{top:1rem;}
+
+    /* ── layout ── */
     .wrap{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(1rem,4vw,3rem);}
     .wrap--narrow{max-width:var(--content-default);}
 
-    nav.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:oklch(from var(--bg) l c h/.88);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid oklch(from var(--txt) l c h/.06);transition:background .3s;}
+    /* ── nav ── */
+    nav.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--brd-soft);transition:background .3s;}
     .nav-inner{max-width:var(--content-wide);margin-inline:auto;padding-inline:clamp(1rem,4vw,3rem);padding-block:1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
     .nav-logo{display:flex;align-items:center;gap:.5rem;font-family:var(--font-display);font-weight:800;font-size:var(--text-lg);color:var(--txt);letter-spacing:-.02em;transition:color var(--transition);}
     .nav-logo:hover{color:var(--pri);}
@@ -174,21 +201,24 @@
     .nav-links a{font-size:var(--text-sm);color:var(--muted);font-weight:500;transition:color var(--transition);}
     .nav-links a:hover{color:var(--txt);}
     .nav-actions{display:flex;align-items:center;gap:.75rem;}
-    .theme-btn{width:36px;height:36px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;color:var(--muted);border:1px solid oklch(from var(--txt) l c h/.1);transition:color var(--transition),background var(--transition);}
+    .theme-btn{width:36px;height:36px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;color:var(--muted);border:1px solid var(--brd-soft);transition:color var(--transition),background var(--transition);}
     .theme-btn:hover{color:var(--txt);background:var(--surface);}
     .nav-cta{padding:.5rem 1.25rem;background:var(--pri);color:var(--inv);border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:600;transition:background var(--transition),transform var(--transition);}
     .nav-cta:hover{background:var(--pri-h);transform:translateY(-1px);}
     .hamburger{display:none;width:36px;height:36px;align-items:center;justify-content:center;color:var(--muted);border-radius:var(--radius-md);transition:color var(--transition);}
     .hamburger:hover{color:var(--txt);}
     @media(max-width:768px){
-      .nav-links,.nav-cta{display:none;}
+      .nav-links{display:none;}
       .hamburger{display:flex;}
       .nav-links.open{display:flex;flex-direction:column;gap:1rem;position:fixed;top:65px;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--brd);padding:1.5rem clamp(1rem,4vw,3rem);z-index:99;}
       .nav-links.open a{font-size:var(--text-base);}
+      /* keep email CTA visible on mobile in hamburger menu */
+      .nav-links.open::after{content:'Email me';display:block;padding:.6rem 1.25rem;background:var(--pri);color:var(--inv);border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:600;text-align:center;cursor:pointer;}
     }
 
+    /* ── hero ── */
     .hero{padding-top:clamp(6rem,15vw,11rem);padding-bottom:clamp(5rem,10vw,8rem);min-height:92vh;display:flex;align-items:center;position:relative;overflow:hidden;}
-    .hero::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:900px;height:700px;background:radial-gradient(ellipse at center,oklch(from var(--pri) l c h/.06) 0%,transparent 70%);pointer-events:none;}
+    .hero::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:900px;height:700px;background:radial-gradient(ellipse at center,var(--hero-glow) 0%,transparent 70%);pointer-events:none;}
     .hero-inner{position:relative;z-index:1;}
     .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:var(--text-xs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--pri);margin-bottom:1.5rem;}
     .eyebrow::before{content:'';width:24px;height:1px;background:var(--pri);}
@@ -198,18 +228,20 @@
     .hero-actions{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
     .btn-primary{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;background:var(--txt);color:var(--bg);border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:700;transition:opacity var(--transition),transform var(--transition);}
     .btn-primary:hover{opacity:.85;transform:translateY(-2px);}
-    .btn-ghost{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;border:1px solid oklch(from var(--txt) l c h/.15);border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:600;color:var(--muted);transition:color var(--transition),border-color var(--transition),transform var(--transition);}
-    .btn-ghost:hover{color:var(--txt);border-color:oklch(from var(--txt) l c h/.35);transform:translateY(-2px);}
-    .hero-stats{margin-top:4rem;display:flex;gap:3rem;padding-top:2rem;border-top:1px solid oklch(from var(--txt) l c h/.07);flex-wrap:wrap;}
+    .btn-ghost{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;border:1px solid var(--brd-med);border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:600;color:var(--muted);transition:color var(--transition),border-color var(--transition),transform var(--transition);}
+    .btn-ghost:hover{color:var(--txt);border-color:var(--brd-strong);transform:translateY(-2px);}
+    .hero-stats{margin-top:4rem;display:flex;gap:3rem;padding-top:2rem;border-top:1px solid var(--brd-soft);flex-wrap:wrap;}
     .stat-val{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;letter-spacing:-.03em;color:var(--txt);}
     .stat-lbl{font-size:var(--text-xs);color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:.25rem;}
 
+    /* ── sections ── */
     .section{padding-block:clamp(4rem,8vw,8rem);}
     .sec-label{font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--pri);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem;}
     .sec-label::before{content:'';display:block;width:20px;height:1px;background:var(--pri);}
     .sec-title{font-size:var(--text-2xl);font-weight:800;letter-spacing:-.03em;color:var(--txt);margin-bottom:1rem;}
     .sec-desc{font-size:var(--text-base);color:var(--muted);max-width:52ch;line-height:1.7;margin-bottom:3rem;}
 
+    /* ── about ── */
     .about-sec{background:var(--surface);border-top:1px solid var(--div);border-bottom:1px solid var(--div);}
     .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
     .about-text p{font-size:var(--text-base);color:var(--muted);line-height:1.8;margin-bottom:1.25rem;}
@@ -217,19 +249,21 @@
     .stack-col{display:flex;flex-direction:column;gap:1rem;}
     .stack-group-lbl{font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);margin-bottom:.5rem;}
     .stack-tags{display:flex;flex-wrap:wrap;gap:.5rem;}
-    .stack-tag{padding:.25rem .75rem;border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:500;background:var(--surface-off);color:var(--muted);border:1px solid oklch(from var(--txt) l c h/.07);transition:color var(--transition),background var(--transition);}
+    .stack-tag{padding:.25rem .75rem;border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:500;background:var(--surface-off);color:var(--muted);border:1px solid var(--brd-soft);transition:color var(--transition),background var(--transition);}
     .stack-tag:hover{color:var(--pri);background:var(--pri-hl);}
     @media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:3rem;}}
 
+    /* ── filter ── */
     .filter-bar{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;}
-    .filter-btn{padding:.5rem 1rem;border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:600;color:var(--muted);border:1px solid oklch(from var(--txt) l c h/.1);background:transparent;transition:color var(--transition),background var(--transition),border-color var(--transition);cursor:pointer;text-transform:uppercase;letter-spacing:.06em;}
-    .filter-btn:hover{color:var(--txt);border-color:oklch(from var(--txt) l c h/.25);}
-    .filter-btn.active{color:var(--pri);background:var(--pri-hl);border-color:oklch(from var(--pri) l c h/.3);}
+    .filter-btn{padding:.5rem 1rem;border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:600;color:var(--muted);border:1px solid var(--brd-soft);background:transparent;transition:color var(--transition),background var(--transition),border-color var(--transition);cursor:pointer;text-transform:uppercase;letter-spacing:.06em;}
+    .filter-btn:hover{color:var(--txt);border-color:var(--brd-med);}
+    .filter-btn.active{color:var(--pri);background:var(--pri-hl);border-color:var(--brd-pri-soft);}
 
+    /* ── cards ── */
     .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:1rem;}
-    .card{background:var(--surface);border:1px solid oklch(from var(--txt) l c h/.07);border-radius:var(--radius-xl);padding:1.5rem;display:flex;flex-direction:column;gap:1rem;transition:border-color var(--transition),box-shadow var(--transition),transform var(--transition);cursor:pointer;position:relative;overflow:hidden;}
-    .card::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top left,oklch(from var(--pri) l c h/.05),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none;}
-    .card:hover{border-color:oklch(from var(--pri) l c h/.3);box-shadow:var(--sh-md);transform:translateY(-2px);}
+    .card{background:var(--surface);border:1px solid var(--brd-soft);border-radius:var(--radius-xl);padding:1.5rem;display:flex;flex-direction:column;gap:1rem;transition:border-color var(--transition),box-shadow var(--transition),transform var(--transition);cursor:pointer;position:relative;overflow:hidden;}
+    .card::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top left,var(--pri-glow),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none;}
+    .card:hover{border-color:var(--brd-pri-soft);box-shadow:var(--sh-md);transform:translateY(-2px);}
     .card:hover::after{opacity:1;}
     .card:active{transform:translateY(0);}
     .card--feat{grid-column:span 2;flex-direction:row;align-items:flex-start;gap:2rem;}
@@ -239,7 +273,7 @@
     .card-meta{display:flex;align-items:center;gap:.75rem;}
     .card-lang{font-size:var(--text-xs);color:var(--faint);display:flex;align-items:center;gap:4px;}
     .lang-dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex-shrink:0;}
-    .l-ts{background:#3178c6;}.l-js{background:#f7df1e;}.l-py{background:#3572A5;}.l-html{background:#e34c26;}.l-def{background:#7a7977;}
+    .l-ts{background:#3178c6;}.l-js{background:#f7df1e;}.l-py{background:#3572A5;}.l-html{background:#e34c26;}.l-sh{background:#89e051;}.l-def{background:#7a7977;}
     .card-stars{font-size:var(--text-xs);color:var(--faint);display:flex;align-items:center;gap:3px;}
     .card-title{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;color:var(--txt);letter-spacing:-.02em;}
     .card--feat .card-title{font-size:var(--text-xl);}
@@ -250,6 +284,15 @@
     .card-link:hover{gap:.5rem;}
     .card.hidden{display:none;}
 
+    /* ── scroll reveal ── */
+    .sr{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
+    .sr.visible{opacity:1;transform:none;}
+    /* hero items animate immediately via CSS keyframe */
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+    .reveal{animation:fadeUp .6s var(--ease) both;}
+    .r1{animation-delay:.1s;}.r2{animation-delay:.2s;}.r3{animation-delay:.3s;}.r4{animation-delay:.4s;}
+
+    /* ── cta ── */
     .cta-sec{background:var(--surface);border-top:1px solid var(--div);}
     .cta-inner{text-align:center;padding-block:clamp(4rem,8vw,8rem);}
     .cta-heading{font-size:var(--text-3xl);font-weight:900;letter-spacing:-.04em;color:var(--txt);margin-bottom:1.25rem;}
@@ -257,8 +300,10 @@
     .cta-body{font-size:var(--text-lg);color:var(--muted);margin-bottom:2.5rem;max-width:48ch;margin-inline:auto;}
     .cta-actions{display:flex;justify-content:center;align-items:center;gap:1rem;flex-wrap:wrap;}
     .btn-email{display:inline-flex;align-items:center;gap:.5rem;padding:1rem 2rem;background:var(--pri);color:var(--inv);border-radius:var(--radius-full);font-size:var(--text-base);font-weight:700;transition:background var(--transition),transform var(--transition),box-shadow var(--transition);}
-    .btn-email:hover{background:var(--pri-h);transform:translateY(-2px);box-shadow:0 8px 24px oklch(from var(--pri) l c h/.3);}
+    .btn-email:hover{background:var(--pri-h);transform:translateY(-2px);box-shadow:0 8px 24px rgba(79,152,163,.3);}
+    [data-theme="light"] .btn-email:hover{box-shadow:0 8px 24px rgba(1,105,111,.25);}
 
+    /* ── footer ── */
     footer.site-footer{padding-block:2rem;border-top:1px solid var(--div);}
     .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
     .footer-copy{font-size:var(--text-xs);color:var(--faint);}
@@ -266,9 +311,9 @@
     .footer-links a{font-size:var(--text-xs);color:var(--faint);transition:color var(--transition);}
     .footer-links a:hover{color:var(--pri);}
 
-    @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-    .reveal{animation:fadeUp .6s cubic-bezier(0.16,1,0.3,1) both;}
-    .r1{animation-delay:.1s;}.r2{animation-delay:.2s;}.r3{animation-delay:.3s;}.r4{animation-delay:.4s;}
+    /* ── avatar ── */
+    .avatar{width:44px;height:44px;border-radius:var(--radius-full);border:2px solid var(--brd-soft);overflow:hidden;flex-shrink:0;}
+    .avatar img{width:100%;height:100%;object-fit:cover;}
   </style>
 </head>
 <body>
@@ -289,7 +334,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="nav-actions">
-        <button class="theme-btn" data-theme-toggle aria-label="Switch to light mode">
+        <button class="theme-btn" data-theme-toggle aria-label="Toggle colour theme">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
         </button>
         <a href="mailto:samo.hossam@gmail.com" class="nav-cta">Email me</a>
@@ -302,9 +347,10 @@
 
   <main id="main">
 
+    <!-- ══ HERO ══ -->
     <section class="hero" aria-label="Introduction">
       <div class="wrap wrap--narrow hero-inner">
-        <p class="eyebrow reveal">Based in Cairo, Egypt</p>
+        <p class="eyebrow reveal">Based in Giza, Egypt</p>
         <h1 class="hero-heading reveal r1">Ideas<br>deserve<br>to <em>exist.</em></h1>
         <p class="hero-body reveal r2">I'm Ossama — a full-stack developer and builder obsessed with turning raw ideas into working things. AI agents, network tools, live platforms, encrypted apps — whatever clicks, I build it.</p>
         <div class="hero-actions reveal r3">
@@ -313,13 +359,14 @@
         </div>
         <div class="hero-stats reveal r4">
           <div><div class="stat-val">24</div><div class="stat-lbl">Repositories</div></div>
-          <div><div class="stat-val">13yr</div><div class="stat-lbl">On GitHub</div></div>
+          <div><div class="stat-val">2013</div><div class="stat-lbl">On GitHub since</div></div>
           <div><div class="stat-val">&infin;</div><div class="stat-lbl">Ideas left</div></div>
         </div>
       </div>
     </section>
 
-    <section class="about-sec section" id="about" aria-labelledby="about-heading">
+    <!-- ══ ABOUT ══ -->
+    <section class="about-sec section sr" id="about" aria-labelledby="about-heading">
       <div class="wrap">
         <div class="about-grid">
           <div class="about-text">
@@ -341,14 +388,15 @@
       </div>
     </section>
 
+    <!-- ══ PROJECTS ══ -->
     <section class="section" id="projects" aria-labelledby="projects-heading">
       <div class="wrap">
-        <p class="sec-label">Projects</p>
-        <h2 class="sec-title" id="projects-heading">Things I've built</h2>
-        <p class="sec-desc">All 24 public repositories — from AI agents to MikroTik scripts to encrypted notes. Filter by category.</p>
+        <p class="sec-label sr">Projects</p>
+        <h2 class="sec-title sr" id="projects-heading">Things I've built</h2>
+        <p class="sec-desc sr">Featured projects from 24 public repositories — AI agents, MikroTik tools, web apps, encrypted notes, and more.</p>
 
-        <div class="filter-bar" role="group" aria-label="Filter by category">
-          <button class="filter-btn active" data-filter="all">All (24)</button>
+        <div class="filter-bar sr" role="group" aria-label="Filter by category">
+          <button class="filter-btn active" data-filter="all">All</button>
           <button class="filter-btn" data-filter="ai">AI &amp; Agents</button>
           <button class="filter-btn" data-filter="web">Web Apps</button>
           <button class="filter-btn" data-filter="network">Network / Infra</button>
@@ -358,40 +406,33 @@
 
         <div class="proj-grid" id="proj-grid">
 
-          <a href="https://github.com/SamoTech/devlens" target="_blank" rel="noopener noreferrer" class="card card--feat" data-categories="web tools">
+          <!-- mikrotik-blocker ⭐4 — featured -->
+          <a href="https://github.com/SamoTech/mikrotik-blocker" target="_blank" rel="noopener noreferrer" class="card card--feat sr" data-categories="network tools" aria-label="MikroTik Blocker — view on GitHub">
             <div class="card-icon" style="width:52px;height:52px;border-radius:var(--radius-lg)">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <div class="card-body">
-              <div class="card-meta"><span class="card-lang"><span class="lang-dot l-ts"></span>TypeScript</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>1</span></div>
-              <h3 class="card-title">DevLens</h3>
-              <p class="card-desc">Free GitHub Action that scores your repo health across 9 dimensions, auto-updates your README with a live badge, and sends weekly dev analytics — zero cost, no seat limits.</p>
-              <div class="card-tags"><span class="card-tag">Next.js</span><span class="card-tag">Upstash Redis</span><span class="card-tag">GitHub Actions</span><span class="card-tag">GitHub API</span></div>
+              <div class="card-meta"><span class="card-lang"><span class="lang-dot l-js"></span>JavaScript</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>4</span></div>
+              <h3 class="card-title">MikroTik Blocker</h3>
+              <p class="card-desc">Production-ready web app to block websites on MikroTik routers using IP address lists — DNS resolution, bulk input, RSC export, optional API push. Most starred project.</p>
+              <div class="card-tags"><span class="card-tag">React</span><span class="card-tag">Node.js</span><span class="card-tag">BGP/ASN</span><span class="card-tag">RouterOS</span></div>
               <span class="card-link">View project <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
             </div>
           </a>
 
-          <a href="https://github.com/SamoTech/notevo" target="_blank" rel="noopener noreferrer" class="card" data-categories="web">
-            <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <!-- devlens ⭐1 -->
+          <a href="https://github.com/SamoTech/devlens" target="_blank" rel="noopener noreferrer" class="card sr" data-categories="web tools" aria-label="DevLens — view on GitHub">
+            <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
             <div class="card-body">
               <div class="card-meta"><span class="card-lang"><span class="lang-dot l-ts"></span>TypeScript</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>1</span></div>
-              <h3 class="card-title">Notevo</h3>
-              <p class="card-desc">Private encrypted notes with Markdown support. AES-GCM encryption, Supabase backend.</p>
-              <div class="card-tags"><span class="card-tag">Next.js 15</span><span class="card-tag">Supabase</span><span class="card-tag">AES-GCM</span></div>
+              <h3 class="card-title">DevLens</h3>
+              <p class="card-desc">Free GitHub Action that scores repo health across 9 dimensions, auto-updates README with a live badge, and sends weekly dev analytics — zero cost, no seat limits.</p>
+              <div class="card-tags"><span class="card-tag">Next.js</span><span class="card-tag">Upstash Redis</span><span class="card-tag">GitHub Actions</span></div>
             </div>
           </a>
 
-          <a href="https://github.com/SamoTech/mikrotik-blocker" target="_blank" rel="noopener noreferrer" class="card" data-categories="network tools">
-            <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <div class="card-body">
-              <div class="card-meta"><span class="card-lang"><span class="lang-dot l-js"></span>JavaScript</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>4</span></div>
-              <h3 class="card-title">MikroTik Blocker</h3>
-              <p class="card-desc">Paste a domain, get a ready-to-run RouterOS block script with full BGP/ASN resolution. DNS bulk input, RSC export, optional API push.</p>
-              <div class="card-tags"><span class="card-tag">React</span><span class="card-tag">Node.js</span><span class="card-tag">BGP/ASN</span><span class="card-tag">RouterOS</span></div>
-            </div>
-          </a>
-
-          <a href="https://github.com/SamoTech/hephaestus-live-agent" target="_blank" rel="noopener noreferrer" class="card" data-categories="ai">
+          <!-- hephaestus-live-agent ⭐2 -->
+          <a href="https://github.com/SamoTech/hephaestus-live-agent" target="_blank" rel="noopener noreferrer" class="card sr" data-categories="ai" aria-label="Hephaestus Live Agent — view on GitHub">
             <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg></div>
             <div class="card-body">
               <div class="card-meta"><span class="card-lang"><span class="lang-dot l-py"></span>Python</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>2</span></div>
@@ -401,17 +442,8 @@
             </div>
           </a>
 
-          <a href="https://github.com/SamoTech/Wazivo" target="_blank" rel="noopener noreferrer" class="card" data-categories="ai web">
-            <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-            <div class="card-body">
-              <div class="card-meta"><span class="card-lang"><span class="lang-dot l-ts"></span>TypeScript</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>1</span></div>
-              <h3 class="card-title">Wazivo</h3>
-              <p class="card-desc">AI career companion — CV analysis, ATS rewriter, job matching. Built for Arabic job seekers. Powered by Groq.</p>
-              <div class="card-tags"><span class="card-tag">Next.js</span><span class="card-tag">Groq</span><span class="card-tag">Python</span></div>
-            </div>
-          </a>
-
-          <a href="https://github.com/SamoTech/AgentHub" target="_blank" rel="noopener noreferrer" class="card" data-categories="ai tools">
+          <!-- AgentHub ⭐2 -->
+          <a href="https://github.com/SamoTech/AgentHub" target="_blank" rel="noopener noreferrer" class="card sr" data-categories="ai tools" aria-label="AgentHub — view on GitHub">
             <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
             <div class="card-body">
               <div class="card-meta"><span class="card-lang"><span class="lang-dot l-js"></span>JavaScript</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>2</span></div>
@@ -421,37 +453,162 @@
             </div>
           </a>
 
-          <a href="https://github.com/SamoTech/AgentScope" target="_blank" rel="noopener noreferrer" class="card" data-categories="ai tools">
-            <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+          <!-- notevo ⭐1 -->
+          <a href="https://github.com/SamoTech/notevo" target="_blank" rel="noopener noreferrer" class="card sr" data-categories="web" aria-label="Notevo — view on GitHub">
+            <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
             <div class="card-body">
-              <div class="card-meta"><span class="card-lang"><span class="lang-dot l-html"></span>HTML</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>1</span></div>
-              <h3 class="card-title">AgentScope</h3>
-              <p class="card-desc">Visual dashboard for monitoring, debugging and inspecting AI agent runs in real-time.</p>
-              <div class="card-tags"><span class="card-tag">HTML</span><span class="card-tag">Agent Monitoring</span></div>
+              <div class="card-meta"><span class="card-lang"><span class="lang-dot l-ts"></span>TypeScript</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>1</span></div>
+              <h3 class="card-title">Notevo</h3>
+              <p class="card-desc">Private encrypted notes with Markdown support — spiritual successor to Laverna. AES-GCM encryption, Supabase backend.</p>
+              <div class="card-tags"><span class="card-tag">Next.js 15</span><span class="card-tag">Supabase</span><span class="card-tag">AES-GCM</span></div>
             </div>
           </a>
 
-          <a href="https://github.com/SamoTech/memoryos" target="_blank" rel="noopener noreferrer" class="card" data-categories="ai tools">
+          <!-- Wazivo ⭐1 -->
+          <a href="https://github.com/SamoTech/Wazivo" target="_blank" rel="noopener noreferrer" class="card sr" data-categories="ai web" aria-label="Wazivo — view on GitHub">
+            <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+            <div class="card-body">
+              <div class="card-meta"><span class="card-lang"><span class="lang-dot l-ts"></span>TypeScript</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>1</span></div>
+              <h3 class="card-title">Wazivo</h3>
+              <p class="card-desc">AI career companion — CV analysis, ATS rewriter, job matching. Built for Arabic job seekers. Powered by Groq.</p>
+              <div class="card-tags"><span class="card-tag">Next.js</span><span class="card-tag">Groq</span><span class="card-tag">Python</span></div>
+            </div>
+          </a>
+
+          <!-- memoryos ⭐1 -->
+          <a href="https://github.com/SamoTech/memoryos" target="_blank" rel="noopener noreferrer" class="card sr" data-categories="ai tools" aria-label="MemoryOS — view on GitHub">
             <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
             <div class="card-body">
               <div class="card-meta"><span class="card-lang"><span class="lang-dot l-py"></span>Python</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>1</span></div>
               <h3 class="card-title">MemoryOS</h3>
-              <p class="card-desc">Local-first AI memory layer — persistent, searchable memory for any AI assistant. 100% private, zero cloud, works with every LLM.</p>
+              <p class="card-desc">Local-first AI memory layer — persistent, searchable memory for any assistant. 100% private, zero cloud, works with every LLM.</p>
               <div class="card-tags"><span class="card-tag">Python</span><span class="card-tag">Local-first</span><span class="card-tag">AI Memory</span></div>
             </div>
           </a>
 
-          <a href="https://github.com/SamoTech/E2ScreenRecorder" target="_blank" rel="noopener noreferrer" class="card" data-categories="embedded tools">
+          <!-- DRIXL ⭐1 -->
+          <a href="https://github.com/SamoTech/DRIXL" target="_blank" rel="noopener noreferrer" class="card sr" data-categories="ai tools" aria-label="DRIXL — view on GitHub">
+            <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+            <div class="card-body">
+              <div class="card-meta"><span class="card-lang"><span class="lang-dot l-py"></span>Python</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>1</span></div>
+              <h3 class="card-title">DRIXL</h3>
+              <p class="card-desc">Compressed inter-agent communication protocol for multi-agent AI systems. Cut token costs by 80% with dual format support.</p>
+              <div class="card-tags"><span class="card-tag">Python</span><span class="card-tag">Multi-agent</span><span class="card-tag">Token Optimization</span></div>
+            </div>
+          </a>
+
+          <!-- opsai ⭐1 -->
+          <a href="https://github.com/SamoTech/opsai" target="_blank" rel="noopener noreferrer" class="card sr" data-categories="ai tools" aria-label="OpsAI — view on GitHub">
+            <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></div>
+            <div class="card-body">
+              <div class="card-meta"><span class="card-lang"><span class="lang-dot l-py"></span>Python</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>1</span></div>
+              <h3 class="card-title">OpsAI</h3>
+              <p class="card-desc">AI-powered DevOps copilot — analyses CI/CD failures, identifies root causes, and suggests fixes using LLM intelligence.</p>
+              <div class="card-tags"><span class="card-tag">Python</span><span class="card-tag">LLM</span><span class="card-tag">CI/CD</span></div>
+            </div>
+          </a>
+
+          <!-- mcp-atlas ⭐1 -->
+          <a href="https://github.com/SamoTech/mcp-atlas" target="_blank" rel="noopener noreferrer" class="card sr" data-categories="tools" aria-label="MCP Atlas — view on GitHub">
+            <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <div class="card-body">
+              <div class="card-meta"><span class="card-lang"><span class="lang-dot l-ts"></span>TypeScript</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>1</span></div>
+              <h3 class="card-title">MCP Atlas</h3>
+              <p class="card-desc">The definitive registry of real-world enterprise MCP deployments — verified case studies, server registries, architecture patterns.</p>
+              <div class="card-tags"><span class="card-tag">TypeScript</span><span class="card-tag">MCP</span><span class="card-tag">Registry</span></div>
+            </div>
+          </a>
+
+          <!-- EventPulseChat ⭐1 -->
+          <a href="https://github.com/SamoTech/EventPulseChat" target="_blank" rel="noopener noreferrer" class="card sr" data-categories="web" aria-label="EventPulseChat — view on GitHub">
+            <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <div class="card-body">
+              <div class="card-meta"><span class="card-lang"><span class="lang-dot l-js"></span>JavaScript</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>1</span></div>
+              <h3 class="card-title">EventPulseChat</h3>
+              <p class="card-desc">Live chat rooms during major events — Super Bowl, NBA Finals, UFC, Oscars. Real-time score updates + fan reactions.</p>
+              <div class="card-tags"><span class="card-tag">JavaScript</span><span class="card-tag">Real-time</span><span class="card-tag">Live Events</span></div>
+            </div>
+          </a>
+
+          <!-- Farik ⭐1 -->
+          <a href="https://github.com/SamoTech/Farik" target="_blank" rel="noopener noreferrer" class="card sr" data-categories="web" aria-label="Farik — view on GitHub">
+            <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div class="card-body">
+              <div class="card-meta"><span class="card-lang"><span class="lang-dot l-js"></span>JavaScript</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>1</span></div>
+              <h3 class="card-title">Farik — فريق</h3>
+              <p class="card-desc">Free open-source HR for growing teams — attendance, payroll, recruitment, and employee management.</p>
+              <div class="card-tags"><span class="card-tag">React</span><span class="card-tag">HRMS</span><span class="card-tag">Open-source</span></div>
+            </div>
+          </a>
+
+          <!-- DataCenterAIOps ⭐1 -->
+          <a href="https://github.com/SamoTech/DataCenterAIOps" target="_blank" rel="noopener noreferrer" class="card sr" data-categories="ai tools" aria-label="DataCenterAIOps — view on GitHub">
+            <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="3" width="20" height="4" rx="1"/><rect x="2" y="10" width="20" height="4" rx="1"/><rect x="2" y="17" width="20" height="4" rx="1"/></svg></div>
+            <div class="card-body">
+              <div class="card-meta"><span class="card-lang"><span class="lang-dot l-ts"></span>TypeScript</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>1</span></div>
+              <h3 class="card-title">DataCenter AIOps</h3>
+              <p class="card-desc">Open-source AIOps control centre — logs, metrics, traces, and incident management in one unified dashboard.</p>
+              <div class="card-tags"><span class="card-tag">TypeScript</span><span class="card-tag">AIOps</span><span class="card-tag">Observability</span></div>
+            </div>
+          </a>
+
+          <!-- E2ScreenRecorder ⭐1 -->
+          <a href="https://github.com/SamoTech/E2ScreenRecorder" target="_blank" rel="noopener noreferrer" class="card sr" data-categories="embedded tools" aria-label="E2ScreenRecorder — view on GitHub">
             <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
             <div class="card-body">
               <div class="card-meta"><span class="card-lang"><span class="lang-dot l-py"></span>Python</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>1</span></div>
               <h3 class="card-title">E2ScreenRecorder</h3>
-              <p class="card-desc">Full-featured Enigma2 plugin — Screenshots &amp; Video from /dev/fb0 framebuffer. Built-in WebIF. Python 2.7–3.12+. Zero mandatory deps.</p>
+              <p class="card-desc">Full-featured Enigma2 plugin — screenshots &amp; video from /dev/fb0 framebuffer. Built-in WebIF. Python 2.7–3.12+. Zero mandatory deps.</p>
               <div class="card-tags"><span class="card-tag">Python</span><span class="card-tag">Enigma2</span><span class="card-tag">STB</span></div>
             </div>
           </a>
 
-          <a href="https://github.com/SamoTech/tech-news-platform" target="_blank" rel="noopener noreferrer" class="card" data-categories="web">
+          <!-- enigma2-channel-color-guide ⭐1 -->
+          <a href="https://github.com/SamoTech/enigma2-channel-color-guide" target="_blank" rel="noopener noreferrer" class="card sr" data-categories="embedded tools" aria-label="Enigma2 Channel Color Guide — view on GitHub">
+            <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"/><line x1="2" y1="20" x2="2.01" y2="20"/></svg></div>
+            <div class="card-body">
+              <div class="card-meta"><span class="card-lang"><span class="lang-dot l-sh"></span>Shell</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>1</span></div>
+              <h3 class="card-title">Enigma2 Color Guide</h3>
+              <p class="card-desc">Complete guide for configuring channel list colors in Enigma2 — AI prompt, skin XML reference, multi-method walkthrough.</p>
+              <div class="card-tags"><span class="card-tag">Shell</span><span class="card-tag">Enigma2</span><span class="card-tag">Skin XML</span></div>
+            </div>
+          </a>
+
+          <!-- mikrotik-telegram-bot ⭐1 -->
+          <a href="https://github.com/SamoTech/mikrotik-telegram-bot" target="_blank" rel="noopener noreferrer" class="card sr" data-categories="network tools" aria-label="MikroTik Telegram Bot — view on GitHub">
+            <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg></div>
+            <div class="card-body">
+              <div class="card-meta"><span class="card-lang"><span class="lang-dot l-py"></span>Python</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>1</span></div>
+              <h3 class="card-title">MikroTik Telegram Bot</h3>
+              <p class="card-desc">Telegram bot that controls MikroTik routers remotely — manage firewall, interfaces, and routing right from your phone.</p>
+              <div class="card-tags"><span class="card-tag">Python</span><span class="card-tag">Telegram</span><span class="card-tag">RouterOS</span></div>
+            </div>
+          </a>
+
+          <!-- agentforge ⭐0 -->
+          <a href="https://github.com/SamoTech/agentforge" target="_blank" rel="noopener noreferrer" class="card sr" data-categories="ai tools" aria-label="AgentForge — view on GitHub">
+            <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+            <div class="card-body">
+              <div class="card-meta"><span class="card-lang"><span class="lang-dot l-py"></span>Python</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>0</span></div>
+              <h3 class="card-title">AgentForge</h3>
+              <p class="card-desc">Mega AI agent platform — 10,000+ modular skills, multi-agent orchestration, persistent memory, LangChain/AutoGen/CrewAI adapters.</p>
+              <div class="card-tags"><span class="card-tag">Python</span><span class="card-tag">FastAPI</span><span class="card-tag">Next.js</span></div>
+            </div>
+          </a>
+
+          <!-- egypt-phone-prices ⭐0 -->
+          <a href="https://github.com/SamoTech/egypt-phone-prices" target="_blank" rel="noopener noreferrer" class="card sr" data-categories="web tools" aria-label="Egypt Phone Prices — view on GitHub">
+            <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+            <div class="card-body">
+              <div class="card-meta"><span class="card-lang"><span class="lang-dot l-py"></span>Python</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>0</span></div>
+              <h3 class="card-title">Egypt Phone Prices</h3>
+              <p class="card-desc">Production-ready smartphone price tracker for Egypt — scrapes Jumia, Noon, B.Tech, Amazon.eg with full price history.</p>
+              <div class="card-tags"><span class="card-tag">Python</span><span class="card-tag">FastAPI</span><span class="card-tag">Next.js</span><span class="card-tag">Celery</span></div>
+            </div>
+          </a>
+
+          <!-- tech-news-platform ⭐1 -->
+          <a href="https://github.com/SamoTech/tech-news-platform" target="_blank" rel="noopener noreferrer" class="card sr" data-categories="web" aria-label="Tech News Platform — view on GitHub">
             <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8V6z"/></svg></div>
             <div class="card-body">
               <div class="card-meta"><span class="card-lang"><span class="lang-dot l-py"></span>Python</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>1</span></div>
@@ -461,26 +618,28 @@
             </div>
           </a>
 
-          <a href="https://github.com/SamoTech/SamoTech" target="_blank" rel="noopener noreferrer" class="card" data-categories="web tools">
-            <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <!-- AgentScope ⭐1 -->
+          <a href="https://github.com/SamoTech/AgentScope" target="_blank" rel="noopener noreferrer" class="card sr" data-categories="ai tools" aria-label="AgentScope — view on GitHub">
+            <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
             <div class="card-body">
-              <div class="card-meta"><span class="card-lang"><span class="lang-dot l-html"></span>HTML</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>2</span></div>
-              <h3 class="card-title">SamoTech Portfolio</h3>
-              <p class="card-desc">This portfolio — GitHub profile page &amp; GitHub Pages site. Hand-crafted HTML/CSS, no build tools.</p>
-              <div class="card-tags"><span class="card-tag">HTML</span><span class="card-tag">GitHub Pages</span></div>
+              <div class="card-meta"><span class="card-lang"><span class="lang-dot l-html"></span>HTML</span><span class="card-stars"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>1</span></div>
+              <h3 class="card-title">AgentScope</h3>
+              <p class="card-desc">Visual dashboard for monitoring, debugging and inspecting AI agent runs in real-time.</p>
+              <div class="card-tags"><span class="card-tag">HTML</span><span class="card-tag">Agent Monitoring</span></div>
             </div>
           </a>
 
         </div>
 
-        <div style="margin-top:2.5rem;text-align:center">
-          <p style="font-size:var(--text-xs);color:var(--faint);margin-bottom:1rem">Showing featured projects — 24 repositories total</p>
-          <a href="https://github.com/SamoTech?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn-ghost">See all 24 on GitHub <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <div style="margin-top:2.5rem;text-align:center" class="sr">
+          <p style="font-size:var(--text-xs);color:var(--faint);margin-bottom:1rem">Showing 20 featured projects — 24 repositories total</p>
+          <a href="https://github.com/SamoTech?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn-ghost">See all on GitHub <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
     </section>
 
-    <section class="cta-sec" id="contact" aria-labelledby="contact-heading">
+    <!-- ══ CONTACT ══ -->
+    <section class="cta-sec sr" id="contact" aria-labelledby="contact-heading">
       <div class="wrap">
         <div class="cta-inner">
           <h2 class="cta-heading" id="contact-heading">Got an <em>idea?</em></h2>
@@ -507,16 +666,81 @@
   </footer>
 
   <script>
-    (function(){
-      var T=document.querySelector('[data-theme-toggle]'),H=document.documentElement,theme='dark';
-      function set(t){theme=t;H.setAttribute('data-theme',t);if(T){T.setAttribute('aria-label','Switch to '+(t==='dark'?'light':'dark')+' mode');T.innerHTML=t==='dark'?'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';}}
-      set(theme);
-      if(T)T.addEventListener('click',function(){set(theme==='dark'?'light':'dark');});
-      var hbtn=document.getElementById('hamburger'),nlinks=document.getElementById('nav-links');
-      if(hbtn&&nlinks){hbtn.addEventListener('click',function(){var o=nlinks.classList.toggle('open');hbtn.setAttribute('aria-expanded',o);hbtn.setAttribute('aria-label',o?'Close navigation':'Open navigation');});nlinks.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nlinks.classList.remove('open');hbtn.setAttribute('aria-expanded','false');});});}
-      var fbtns=document.querySelectorAll('.filter-btn'),cards=document.querySelectorAll('.card');
-      fbtns.forEach(function(b){b.addEventListener('click',function(){var f=b.getAttribute('data-filter');fbtns.forEach(function(x){x.classList.remove('active');});b.classList.add('active');cards.forEach(function(c){var cats=(c.getAttribute('data-categories')||'').split(' ');if(f==='all'||cats.includes(f)){c.classList.remove('hidden');}else{c.classList.add('hidden');}});});});
-    })();
+  (function(){
+    var H=document.documentElement;
+
+    /* ── theme toggle (system-aware, no FOUC) ── */
+    var T=document.querySelector('[data-theme-toggle]');
+    function getTheme(){return H.getAttribute('data-theme')||'dark';}
+    function applyTheme(t){
+      H.setAttribute('data-theme',t);
+      if(T){
+        T.setAttribute('aria-label','Switch to '+(t==='dark'?'light':'dark')+' mode');
+        T.innerHTML=t==='dark'
+          ?'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+          :'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+      }
+    }
+    applyTheme(getTheme());
+    /* enable transition only after first paint */
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){document.body.classList.add('theme-ready');});
+    });
+    if(T) T.addEventListener('click',function(){
+      applyTheme(getTheme()==='dark'?'light':'dark');
+    });
+
+    /* ── hamburger ── */
+    var hbtn=document.getElementById('hamburger'),nlinks=document.getElementById('nav-links');
+    if(hbtn&&nlinks){
+      hbtn.addEventListener('click',function(){
+        var o=nlinks.classList.toggle('open');
+        hbtn.setAttribute('aria-expanded',String(o));
+        hbtn.setAttribute('aria-label',o?'Close navigation':'Open navigation');
+        hbtn.innerHTML=o
+          ?'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
+          :'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+      });
+      nlinks.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click',function(){
+          nlinks.classList.remove('open');
+          hbtn.setAttribute('aria-expanded','false');
+          hbtn.innerHTML='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+        });
+      });
+    }
+
+    /* ── filter ── */
+    var fbtns=document.querySelectorAll('.filter-btn'),cards=document.querySelectorAll('.card');
+    fbtns.forEach(function(b){
+      b.addEventListener('click',function(){
+        var f=b.getAttribute('data-filter');
+        fbtns.forEach(function(x){x.classList.remove('active');});
+        b.classList.add('active');
+        cards.forEach(function(c){
+          var cats=(c.getAttribute('data-categories')||'').split(' ');
+          c.classList.toggle('hidden', f!=='all' && !cats.includes(f));
+        });
+      });
+    });
+
+    /* ── scroll reveal (IntersectionObserver) ── */
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}
+        });
+      },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+      document.querySelectorAll('.sr').forEach(function(el,i){
+        el.style.transitionDelay=(i%4)*0.07+'s';
+        io.observe(el);
+      });
+    } else {
+      /* fallback: just show everything */
+      document.querySelectorAll('.sr').forEach(function(el){el.classList.add('visible');});
+    }
+
+  })();
   </script>
 </body>
 </html>
