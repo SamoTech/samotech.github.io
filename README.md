@@ -1,5 +1,7 @@
 # samotech.github.io
 
+<p align="center"><img src="https://raw.githubusercontent.com/SamoTech/samotech.github.io/main/docs/assets/banner.svg" alt="samotech.github.io banner" width="900"/></p>
+
 Personal portfolio of **Ossama Hashim** — full-stack developer, builder, and open-source maintainer based in Giza, Egypt.
 
 🌐 **Live:** [samotech.github.io](https://samotech.github.io)
