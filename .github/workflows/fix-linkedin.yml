@@ -1,0 +1,33 @@
+name: Fix LinkedIn URL
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    if: ${{ github.event.head_commit.message != 'Fix LinkedIn profile URL' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fix LinkedIn URL and remove temporary workflow
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text()
+          old = 'https://www.linkedin.com/in/samo-hashim'
+          new = 'https://www.linkedin.com/in/ossamahashim/'
+          if old not in s:
+              raise SystemExit('Old LinkedIn URL not found')
+          p.write_text(s.replace(old, new))
+          PY
+          rm .github/workflows/fix-linkedin.yml
+          git config user.name 'SamoTech'
+          git config user.email 'samo.hossam@gmail.com'
+          git add index.html .github/workflows/fix-linkedin.yml
+          git commit -m 'Fix LinkedIn profile URL'
+          git push
