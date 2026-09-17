@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="200" viewBox="0 0 900 200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="stripe" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#01696f" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#01696f" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#01696f" stop-opacity="0.15"/>
+      <stop offset="60%" stop-color="#01696f" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="200" fill="url(#bg)" rx="12"/>
+  <rect width="500" height="200" fill="url(#glow)" rx="12"/>
+  <rect x="0" y="0" width="5" height="200" fill="url(#stripe)" rx="2"/>
+  <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r="1" fill="#01696f" opacity="0.06"/>
+  </pattern>
+  <rect width="900" height="200" fill="url(#dots)" rx="12"/>
+  <circle cx="820" cy="100" r="55" fill="#01696f" opacity="0.08"/>
+  <circle cx="820" cy="100" r="40" fill="#01696f" opacity="0.10"/>
+  <text x="820" y="112" font-family="system-ui,sans-serif" font-size="36" text-anchor="middle" fill="#4f98a3" opacity="0.9">◈</text>
+  <text x="48" y="90" font-family="system-ui,-apple-system,sans-serif" font-size="42" font-weight="800" fill="#f0f6fc" letter-spacing="-0.5">SamoTech Portfolio</text>
+  <text x="48" y="125" font-family="system-ui,sans-serif" font-size="17" font-weight="400" fill="#8b949e">Full-stack developer · AI · Networks · Open Source</text>
+  <line x1="48" y1="175" x2="300" y2="175" stroke="#01696f" stroke-width="1.5" opacity="0.4"/>
+  <text x="48" y="193" font-family="system-ui,sans-serif" font-size="12" fill="#01696f" opacity="0.6" letter-spacing="1">SAMOTECH · github.com/SamoTech</text>
+</svg>
