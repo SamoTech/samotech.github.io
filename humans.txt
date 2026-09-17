@@ -1,0 +1,16 @@
+/* TEAM */
+Developer & Designer: Ossama Hashim
+Contact: samo.hossam [at] gmail.com
+Location: Giza, Egypt
+GitHub: https://github.com/SamoTech
+
+/* SITE */
+Last update: 2026-04-13
+Language: English
+Doctype: HTML5
+Components: Hand-crafted HTML, CSS, JavaScript — no build tools
+Hosted on: GitHub Pages
+
+/* THANKS */
+Fonts: Fontshare (Cabinet Grotesk, Satoshi)
+Icons: Inline SVG (hand-written)

@@ -1,0 +1,13 @@
+{
+  "name":"Ossama Hashim — SamoTech",
+  "short_name":"SamoTech",
+  "description":"IT Manager, builder and AI engineer working across automation, networking and software products.",
+  "start_url":"/",
+  "display":"standalone",
+  "background_color":"#090b0f",
+  "theme_color":"#63e6be",
+  "lang":"en",
+  "orientation":"any",
+  "icons":[{"src":"https://avatars.githubusercontent.com/SamoTech","sizes":"192x192","type":"image/png"},{"src":"https://avatars.githubusercontent.com/SamoTech","sizes":"512x512","type":"image/png"}],
+  "categories":["productivity","developer tools","portfolio"]
+}
