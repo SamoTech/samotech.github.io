@@ -1,5 +1,0 @@
-# robots.txt — samotech.github.io
-User-agent: *
-Allow: /
-
-Sitemap: https://samotech.github.io/sitemap.xml
